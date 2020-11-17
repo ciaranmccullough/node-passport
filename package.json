@@ -3,21 +3,26 @@
   "version": "1.0.0",
   "description": "A Node JS API for user auth",
   "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
   "repository": "git@github.com:ciaranmccullough/node-passport.git",
   "author": "ciaranmccullough <59839106+ciaranmccullough@users.noreply.github.com>",
   "license": "MIT",
   "dependencies": {
-    "concurrently": "^5.3.0",
-    "dotenv": "^8.2.0",
+    "bcrypt": "^5.0.0",
+    "ejs": "^3.1.5",
     "express": "^4.17.1",
+    "express-flash": "^0.0.2",
+    "express-session": "^1.17.1",
+    "method-override": "^3.0.0",
     "mongoose": "^5.10.11",
     "passport": "^0.4.1",
-    "passport-facebook": "^3.0.0"
+    "passport-local": "^1.0.0",
+    "pug": "^3.0.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.12.1",
-    "@babel/core": "^7.12.3",
-    "@babel/node": "^7.12.1",
-    "@babel/preset-env": "^7.12.1"
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.6"
   }
 }
