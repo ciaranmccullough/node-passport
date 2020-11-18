@@ -19,7 +19,7 @@ initializePassport(
 
 const users = [];
 
-app.set('view-engine', 'ejs');
+app.set('view-engine', 'pug');
 app.use(express.urlencoded({ extended: false }));
 app.use(flash());
 app.use(
@@ -34,11 +34,11 @@ app.use(passport.session());
 app.use(methodOverride('_method'));
 
 app.get('/', checkAuthenticated, (req, res) => {
-  res.render('index.ejs', { name: req.user.name });
+  res.render('index.pug', { name: req.user.name });
 });
 
 app.get('/login', checkNotAuthenticated, (req, res) => {
-  res.render('login.ejs');
+  res.render('login.pug');
 });
 
 app.post(
@@ -52,7 +52,7 @@ app.post(
 );
 
 app.get('/register', checkNotAuthenticated, (req, res) => {
-  res.render('register.ejs');
+  res.render('register.pug');
 });
 
 app.post('/register', checkNotAuthenticated, async (req, res) => {

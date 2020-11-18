@@ -1,0 +1,19 @@
+extends layout
+
+block header
+  h1 Register
+
+block content
+  form(action="/register" method="POST")
+    div
+      label(for="name") Name
+      input(type="text" id="name" name="name" required)
+    div
+      label(for="email") Email
+      input(type="email" id="email" name="email" required)
+    div
+      label(for="password") Password
+      input(type="password" id="password" name="password" required)
+    button(type="submit" class="btn btn-success") Regsiter
+
+  a(href="/login") Login

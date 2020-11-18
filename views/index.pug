@@ -1,0 +1,7 @@
+extends layout
+block header
+    h1 Hi #{name}
+
+block content
+    form(action="/logout?_method=DELETE" method="POST")
+      button(type="submit" class="btn btn-danger") Log Out
