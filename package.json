@@ -4,7 +4,7 @@
   "description": "A Node JS API for user auth",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node server.js"
   },
   "repository": "git@github.com:ciaranmccullough/node-passport.git",
   "author": "ciaranmccullough <59839106+ciaranmccullough@users.noreply.github.com>",
