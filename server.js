@@ -1,7 +1,9 @@
+// Env Variables
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config();
 }
 
+// Dependencies required
 const express = require('express');
 const app = express();
 const PORT = 3000;
@@ -11,6 +13,7 @@ const flash = require('express-flash');
 const session = require('express-session');
 const methodOverride = require('method-override');
 
+// Initialise Passport
 const initializePassport = require('./passport.config');
 initializePassport(
   passport,
@@ -18,8 +21,10 @@ initializePassport(
   (id) => users.find((user) => user.id === id)
 );
 
+// Users are stored in array for now
 const users = [];
 
+// Linking app to pug templates
 app.set('view-engine', 'pug');
 app.use(express.urlencoded({ extended: false }));
 app.use(flash());
@@ -34,6 +39,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(methodOverride('_method'));
 
+// Routes
 app.get('/', checkAuthenticated, (req, res) => {
   res.render('index.pug', { name: req.user.name });
 });
@@ -76,6 +82,7 @@ app.delete('/logout', (req, res) => {
   res.redirect('/login');
 });
 
+// Auth
 function checkAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
     return next();

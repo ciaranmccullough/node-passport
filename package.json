@@ -2,7 +2,7 @@
   "name": "node-passport",
   "version": "1.0.0",
   "description": "A Node JS API for user auth",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
